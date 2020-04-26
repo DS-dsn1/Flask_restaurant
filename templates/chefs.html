@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Our chefs{% endblock %}
+
+{% block content %}
+  <h1>Our chefs</h1>
+  <div>
+      {% for chef in chefs %}
+      <p> {{ chef }} - {{ chef.first_name }}</p>
+      {% endfor %}
+  </div>
+{% endblock %}

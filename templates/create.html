@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}New dish{% endblock %}
+
+{% block content %}
+    <div class="container" >
+      <form method="post">
+          <div class="form-group">
+              <label for="name">Name</label>
+              <input name="name" class="form-control" id="name" value="{{ request.form['name'] }}"
+                     placeholder="pizza, pancakes, etc." required>
+          </div>
+          <div class="form-group">
+              <label for="recipe">Recipe</label>
+              <textarea class="form-control" name="recipe" id="recipe" rows="3">{{ request.form['recipe'] }}</textarea>
+          </div>
+          <div class="form-group">
+              <label for="ingredients">Ingredients</label>
+              <input name="ingredients" class="form-control" id="ingredients" value="{{ request.form['ingredients'] }}">
+          </div>
+          <div class="form-group">
+              <label for="cost">Cost</label>
+              <input name="cost" class="form-control" id="cost" value="{{ request.form['cost'] }}" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Save</button>
+      </form>
+  </div>
+{% endblock %}
